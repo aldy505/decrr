@@ -26,3 +26,11 @@ func TestWrap(t *testing.T) {
 		t.Error("different than expected:", w.Error(), "\nexpected:", expected)
 	}
 }
+
+func TestNilValue(t *testing.T) {
+	w := decrr.Wrap(nil)
+
+	if w != nil {
+		t.Error("should be nil, got:", w)
+	}
+}
